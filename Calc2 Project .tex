@@ -1,0 +1,200 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+
+\usepackage[T1]{fontenc} 
+\usepackage{fourier} 
+\usepackage[english]{babel} 
+\usepackage{amsmath,amsfonts,amsthm} 
+\usepackage{enumerate}
+\usepackage{lipsum}
+\usepackage{sectsty} 
+\allsectionsfont{\centering \normalfont\scshape} 
+
+\usepackage{fancyhdr} 
+\pagestyle{fancyplain} 
+\fancyhead{} 
+\fancyfoot[L]{} 
+\fancyfoot[C]{} 
+\fancyfoot[R]{\thepage} 
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt} 
+\setlength{\headheight}{13.6pt} 
+\numberwithin{equation}{section} 
+\numberwithin{figure}{section} 
+\numberwithin{table}{section} 
+\setlength\parindent{0pt} 
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 
+
+\title{	
+\normalfont \normalsize 
+\textsc{Rochester Institute of Technology} \\ [25pt] 
+\horrule{0.5pt} \\[0.4cm]
+\huge Project Based Calculus II Project \\ 
+\horrule{2pt} \\[0.5cm] 
+}
+
+\author{Zack Yenchik\\Jonah Fritz\\ Jisook Moon \\ Daniel Chung} 
+
+\date{\normalsize\today} 
+
+\begin{document}
+
+\maketitle 
+
+\section{Calculus and Baseball}
+
+\hspace{10mm}In this project we explore three of the many applications of calculus to baseball. The physical interactions of the game, e
+specially the collision of ball and bat are quite complex and their models are discussed in detail in a book by Robert Adair, \textit{The Physics of Baseball}. 
+
+\begin{enumerate}[1.]
+	\item It may surprise you to learn that the collision of baseball and bat lasts only about a thousandth of a second. Here we calculate the average force on the bat during this collision by first computing the change in the 	ball's momentum.\\\\ The \textit{momentum p} of an object is the product of its \textit{mass m} and its \textit{velocity v}, that is, \textit{p = mv}. Suppose an object, moving along a straight line, is acted on by a force \textit{F 	= f(t)} that is continuous function of time.
+		\begin{enumerate}[(a)] 
+			\item Show that the change in momentum over a time interval [$t_{0}, t_{1}$] is equal to the integral of \textit{F} from $t_{0}$ to $t_{1}$; that is, show that\\ 
+			\center $p(t_{1}) - p(t_{0}) =  \int _{t_{0}}^{t_{1}} F(t) \,dt$ \\ 
+			\raggedright $F = m \frac{dv}{dt}$ \\
+			$\int _{t_{0}}^{t_{1}} F(t) \,dt = \int _{t_{0}}^{t_{1}} m \frac{dv}{dt} \,dt$\\
+			$\int _{t_{0}}^{t_{1}} m \frac{dv}{dt} \,dt = m \int_{t_{0}}^{t_{1}} dv$\\
+			$m \int_{t_{0}}^{t_{1}} dv = [mv]_{t_{0}}^{t_{1}}$\\
+			$[mv]_{t_{0}}^{t_{1}} = mv_{1} - mv_{0}$\\
+			$mv_{1} - mv_{0} = p(t_{1}) - p(t_{0})$\\
+			$p(t_{1}) - p(t_{0}) = p(t_{1}) - p(t_{0})$
+		\end{enumerate}
+		\begin {enumerate}[(b)]
+			\item  A pitcher throws a 90-mi/h fastball to a batter, who hits a line drive directly back to the pitcher. The ball is in contact with the bat for 0.001 s and leaves the bat with velocity 110 mi/h. A baseball weighs 5oz 			and, in US Customary unites, its mass is measured in slugs: $m = w/g$ where $g = 32 ft/s^{2}$. 
+				\begin{enumerate}[(i)]
+					\item Find the change in the ball's momentum. \\
+					$v_{1} = 110$ mi/h $ = \frac{110(5280)}{3600} ft/s = 161.333$ ft/s \\
+					$v_{0} = -90$ mi/h $ = -132 $ ft/s \\
+					Baseball's mass \\
+					$m = \frac{5}{512}$ \\
+					$p(t_{1}) - p(t_{0})$ = $mv_{1} - mv_{0}$\\
+					$mv_{1} - mv_{0}$ = $\frac{5}{512}[161.333 - (-132)] \\
+					= 2.86$ slug-ft/s\\
+					\item Find the average force on the bat. \\
+					$\int_{0}^{0.001}F(t)$ dt \\
+					$p(0.001) - p(0) = 2.86$\\
+					So the average on the interval [0, 0.001] \\
+					$\frac{1}{0.001} \int_{0}^{0.001}F(t)$ dt \\
+					$\int_{0}^{0.001}F(t)$ dt = $\frac{1}{0.001}(2.86)$\\
+					= 2860 lb.
+				\end{enumerate}
+		\end{enumerate}
+	\item In this problem we calculate the work required for a pitcher to throw a 90-mi/h fastball by first considering kinetic energy. \\
+	\hspace{10mm} The \textit{kinetic energy K} of an object of mass \textit{m} and velocity \textit{v} is give by $k = \frac{1}{2}mv^2$. \\ Suppose an object of mass \textit{m}, moving in a straight line, is acted on by a force $F = F(s)$ that depends on its position \textit{s}. According to Newton's Second Law:
+	\begin{center} $F(s) = ma = m \frac{dv}{dt}$ \\
+	\end{center}
+	\raggedright where \textit{a} and \textit{v} denote the acceleration and velocity of the object. 
+		\begin{enumerate}[(a)]
+			\item Show that the work done in moving the object from a position $s_{0}$ to a position $s_{1}$ is equal to the change in the object's kinetic energy; that is show that \\ 
+			\begin{center} $W = \int_{s_{0}}^{s_{1}} F(s)$ ds $ = \frac{1}{2}mv_{1}^{2} - \frac{1}{2}mv_{0}^{2}$\\
+			\end{center}
+			$W = \int_{s_{0}}^{s_{1}} F(s)$ ds\\
+			$F(s) = mv \frac{dv}{ds}$\\
+			By substitution. . .\\
+			$W = \int_{s_{0}}^{s_{1}} F(s)$ ds $= \int_{s_{0}}^{s_{1}}mv $ dv\\
+			 $= \int_{s_{0}}^{s_{1}}mv $ dv = $[\frac{1}{2}mv^2]_{v_{0}}^{v_{1}}$\\
+			 $[\frac{1}{2}mv^2]_{v_{0}}^{v_{1}}$ = $\frac{1}{2}mv_{1}^{2} - \frac{1}{2}mv_{0}^{2}$\\
+			
+			\item How many foot-pounds of work does it take to throw a basketball at a speed of 90 mi/h? \\
+			Given Information . . .\\
+			90 mi/h = 132 ft/s\\
+			$v_{0} =  0$\\
+			then . . . \\ 
+			$v_{1} = 132$ ft/s\\ 
+			m = $\frac{5}{512}$\\
+			$W = \frac{1}{2}mv_{1}^{2} - \frac{1}{2}mv_{0}{2}$\\
+			$\frac{1}{2} * \frac{5}{512} * (132)^2 $\\
+			= 85 ft/lb
+		\end{enumerate}
+	\item 
+		\begin{enumerate}[(a)]
+		\item An outfielder fields a baseball 280 ft away from home plate and throws it directly to the catcher with an initial velocity of 100 ft/s. Assume that the velocity \textit{v(t)} of the ball after \textit{t} seconds satisfies the differential equation $\frac{dv}{dt} = -\frac{1}{10}v$ because of air resistance. How long does it take for the ball to reach home plate? \\
+		%HERE GOES SOLUTION %
+		Here we have a differential equation of the form \\
+		$\frac{dv}{dt} = v(0)e^{kt}$\\
+		In this case, \\
+		$k = \frac{-1}{10} $ and $v(0) = 100$ ft/s, so $v(t) = 100e^(\frac{-t}{10})$ \\
+		We are interested in the time t that the ball takes to travel 280 ft, so we find the distance function\\
+		$ s(t) = \int_{0}^{t} v(x)$ dx\\
+		$ = \int_{0}^{t} 100e^\frac{-x}{10}$ dx\\
+		$ = 100[-10e^\frac{-x}{10}]_{0}^{t}$\\
+		$ = -1000e^\frac{-t}{10}$\\
+		Now we set $s(t) = 280 $ and solve for $t$ : \\
+		$ 280 = 1000(1-e^\frac{-t}{10})$\\
+		$ = 1 - e^\frac{-t}{10}v= \frac{7}{25} $\\
+		$ \frac{-1}{10} t = ln(1-\frac{7}{25}) $\\
+		$ t = 3.285 $ seconds \\
+	
+		\item The manager of the team wonders wether the ball will reach home plate sooner if it is delayed by an infielder. The shortstop can position himself directly between the outfielder and home plate, catch the ball thrown by the outfielder, turn, and throw the ball to the catcher with an initial velocity of 105 ft/s. The manager clocks the relay time of the shortstop at half a second. How far from home plate should the shortstop position himself to minimize the total time for the ball to reach the plate? Should the manager encourage a direct throw or a delayed throw? What if the shortstop can throw at 115 ft/s. \\
+
+
+		%HERE GOES SOLUTION%
+\medskip
+		Let x be the distance of the shortstop from homeplate. We calculate the time for the ball to reach homeplate as a function of x, then differentiate with respect to x to find the value of x which
+		corresponds to the minimum time. The total time that it takes the ball to reach home is the sum of the times of the two throws, plus the relay time $\frac{1}{2}$ seconds. The distance from the 				fielder to the shortstop is $ 280 - x$ , so to find the time $t_1$ taken by the first throw, we solve the equation\\
+
+		$s_1(t_1) = 280 - x$ \\
+		$1-e^\frac{-t_1}{10} = \frac{280-x}{1000}$\\
+		$t_1 = -10ln\frac{720+x}{1000}$.\\
+\medskip
+		We find the time $t_2$ taken by the second throw if the shortstop throws with velocity $w$, since we see that this velocity varies in the rest of the problem. \\
+		We use $v = we^\frac{-t}{10} = 1 - 			\frac{x}{10w}$ and isolate $t_2$ in the equation $s(t_2) = 10w(1-e^\frac{f_2}{10}) = x$\\
+		$e^\frac{-t_2}{10} = 1 - \frac{x}{10w}$\\
+		$t_2 = -10ln\frac{10w-x}{10w}$\\
+		so the total time is\\
+ 		$t_w(x) = \frac{1}{2}-10[ln\frac{720+x}{1000}  + ln\frac{10w-x}{10w}]$.\\
+		To find the minimum, we differentiate\\
+		$\frac{dt_w}{dx} = -10[\frac{1}{720+x} - \frac{1}{10w-x}]$\\
+		which changes from negative to positive when $720 + x = 10w-x$.\\
+\medskip
+		By the First Derivative Test, $t_w$ has a minimum at this distance from the shortstop to home plate. So if the shortstop throws at $w = 105$ from a point $x = 5(105) - 260 = 165$ ft from home 				plate, the minimum time is $t_{105} (165) = \frac{1}{2} - 10(ln\frac{720+165}{1000} + ln\frac{1050-165}{1050}) = 3.431$ seconds.\\
+\medskip
+
+		This is longer than the time taken in part (a), so in this case, the manager should encourage a direct throw. \\
+\medskip
+		If $w = 115$ ft/s, then $x = 215$ ft from home, and the minimum time is $t_{115} = \frac{1}{2}$\\\
+
+		$10(ln\frac{720+215}{1000} + ln\frac{1150-215}{1150}) = 3.242$ seconds. \\
+\medskip
+This is less than the time taken in part (a), so in this case, the manager should encourage a relayed throw.\\
+
+\bigskip
+		\item For what throwing velocity of the shortstop does a relayed throw take the same time as a direct throw? \\
+		%HERE GOES SOLUTION%
+		In general, the minimum time is\\
+		$t_w(5w-260) = \frac{1}{2} - 10[ln\frac{260+5w}{1000} + ln\frac{260+5w}{10w}]$\\
+		$\frac{1}{2} - 10ln\frac{(w+72)^2}{400w}$\\
+
+\medskip
+		We want to find out when this is about 3.285 seconds, the same time as the direct throw. We can estimate that this is the case for w = 112.8 ft.s, So if the shortstop can throw the ball with this 				velocity, then a relayed throw takes the same time as a direct throw.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		\end{enumerate}
+\end{enumerate}
+
+
+\end{document}
