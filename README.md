@@ -1,2 +1,2 @@
 # calcProject
-noob attempt with latex
+first try using latex for calc 2 final project
